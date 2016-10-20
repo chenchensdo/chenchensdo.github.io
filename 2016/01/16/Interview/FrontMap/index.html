@@ -16,229 +16,65 @@
 <meta name="twitter:title" content="【转】2015-2016前端知识体系">
 <meta name="twitter:description" content="前端知识体系：总结了下前端这两年的主流技术，大部分技术在我的博客里有较深入的研究学习对应技术博客地址：http://ouvens.github.io ，博客持续更新中，欢迎大家关注~">
   
-    <link rel="alternative" href="/atom.xml" title="red&#39;s text blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="red&#39;s text blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/favicon.png">
+    <link rel="icon" href="/favicon.png">
   
   
-      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          rootUrl: '/',
-          fancybox: true,
-          animate: true,
-          isHome: false,
-          isPost: true,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
+
 </head>
+
 <body>
   <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="/img/head.jpg" class="js-avatar">
-            
-        </a>
-
-        <hgroup>
-          <h1 class="header-author"><a href="/" title="Hi Mate">Red</a></h1>
-        </hgroup>
-
-        
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/Home">博客首页</a></li>
-                        
-                            <li><a href="/works">作品展示</a></li>
-                        
-                            <li><a href="/about">留言打卡</a></li>
-                        
-                            <li><a href="/FrontEndGuide">前端导航</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
-                            
-                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
-                            
-                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-                            
-                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
-                            
-                                <a class="fl google" target="_blank" href="#" title="google">google</a>
-                            
-                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
-                            
-                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 15px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Sublime/" style="font-size: 12.5px;">Sublime</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/username/" style="font-size: 10px;">username</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">red&#39;s text blog</a>
+      </h1>
+      
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Red</a></h1>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chenchensdo.github.io"></form>
       </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/head.jpg" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="Me">Red</a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/Home">博客首页</a></li>
-                
-                    <li><a href="/works">作品展示</a></li>
-                
-                    <li><a href="/about">留言打卡</a></li>
-                
-                    <li><a href="/FrontEndGuide">前端导航</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
-                    
-                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
-                    
-                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-                    
-                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-                    
-                        <a class="google" target="_blank" href="#" title="google">google</a>
-                    
-                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
-                    
-                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
-                    
-                </div>
-            </nav>
-        </header>                
     </div>
-</nav>
-      <div class="body-wrap"><article id="post-Interview/FrontMap" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/16/Interview/FrontMap/" class="article-date">
-      <time datetime="2016-01-16T05:58:41.000Z" itemprop="datePublished">2016-01-16</time>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Interview/FrontMap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/16/Interview/FrontMap/" class="article-date">
+  <time datetime="2016-01-16T05:58:41.000Z" itemprop="datePublished">2016-01-16</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interview/">Interview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
     
     
       <header class="article-header">
@@ -250,26 +86,9 @@
   
 
       </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Interview/">Interview</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/">Interview</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
     
     <div class="article-entry" itemprop="articleBody">
       
-          
         <p>　　<strong> 前端知识体系：</strong>总结了下前端这两年的主流技术，大部分技术在我的博客里有较深入的研究学习<br>对应技术博客地址：<a href="http://ouvens.github.io" target="_blank" rel="external">http://ouvens.github.io</a> ，博客持续更新中，欢迎大家关注~</p>
 <a id="more"></a>
 <h2 id="框架与组件"><a href="#框架与组件" class="headerlink" title="框架与组件"></a>框架与组件</h2><h3 id="bootstrap等UI框架设计与实现"><a href="#bootstrap等UI框架设计与实现" class="headerlink" title="bootstrap等UI框架设计与实现"></a>bootstrap等UI框架设计与实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">伸缩布局：</div><div class="line">grid网格布局</div><div class="line"></div><div class="line">基础UI样式：</div><div class="line">元素reset、按钮、图片、菜单、表单</div><div class="line"></div><div class="line">组件UI样式：</div><div class="line">按钮组、字体图标、下拉菜单、输入框组、导航组、面包屑、分页、标签、轮播、弹出框、列表、多媒体、警告</div><div class="line"></div><div class="line">响应式布局：</div><div class="line">布局、结构、样式、媒体、javascript响应式</div><div class="line"></div><div class="line">第三方插件：</div><div class="line">插件管理</div></pre></td></tr></table></figure>
@@ -323,43 +142,31 @@
 
       
     </div>
-    
+    <footer class="article-footer">
+      <a data-url="https://chenchensdo.github.io/2016/01/16/Interview/FrontMap/" data-id="ciuhrqjtt003jfsu6sb0ilz75" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/">Interview</a></li></ul>
+
+    </footer>
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 Red 的个人博客">Red</a></p>
-        <p><span>发布时间:</span>2016年01月16日 - 13时58分</p>
-        <p><span>最后更新:</span>2016年10月13日 - 20时11分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/16/Interview/FrontMap/" title="【转】2015-2016前端知识体系">https://chenchensdo.github.io/2016/01/16/Interview/FrontMap/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://chenchensdo.github.io/2016/01/16/Interview/FrontMap/　　作者: Red" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
 <nav id="article-nav">
   
-    <a href="/2016/01/19/Induce/JavaScript/JSTip/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
+    <a href="/2016/01/19/Induce/Ajax/AjaxStatus/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          原生JS TitleTip
+          Ajax Status请求状态
         
       </div>
     </a>
   
   
     <a href="/2016/01/15/Induce/JavaScript/NativeJS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">原生JavaScript探索</div>
-      <strong class="article-nav-caption">></strong>
     </a>
   
 </nav>
@@ -367,209 +174,110 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#框架与组件"><span class="toc-number">1.</span> <span class="toc-text">框架与组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bootstrap等UI框架设计与实现"><span class="toc-number">1.1.</span> <span class="toc-text">bootstrap等UI框架设计与实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery、zepto使用原理以及插件开发"><span class="toc-number">1.2.</span> <span class="toc-text">jQuery、zepto使用原理以及插件开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mvc-mvvm框架原理设计，vue-angular-avalon等"><span class="toc-number">1.3.</span> <span class="toc-text">mvc/mvvm框架原理设计，vue/angular/avalon等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#polymer-angular2思想与设计思路"><span class="toc-number">1.4.</span> <span class="toc-text">polymer/angular2思想与设计思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reactjs原理与使用"><span class="toc-number">1.5.</span> <span class="toc-text">reactjs原理与使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#commonJS-AMD-CMD"><span class="toc-number">1.6.</span> <span class="toc-text">commonJS/AMD/CMD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loadJs模块化加载原理与实现"><span class="toc-number">1.7.</span> <span class="toc-text">loadJs模块化加载原理与实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#polyfill、shim原理与实现"><span class="toc-number">1.8.</span> <span class="toc-text">polyfill、shim原理与实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtualDom、IncrementalDOM"><span class="toc-number">1.9.</span> <span class="toc-text">virtualDom、IncrementalDOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shadowdom"><span class="toc-number">1.10.</span> <span class="toc-text">shadowdom</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webwork与serviceWorker"><span class="toc-number">1.11.</span> <span class="toc-text">webwork与serviceWorker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6转ES5、Babel与ES6开发规范体系"><span class="toc-number">1.12.</span> <span class="toc-text">ES6转ES5、Babel与ES6开发规范体系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IsomorphicJavaScript"><span class="toc-number">1.13.</span> <span class="toc-text">IsomorphicJavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向数据绑定"><span class="toc-number">1.14.</span> <span class="toc-text">双向数据绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#browserify运行原理"><span class="toc-number">1.15.</span> <span class="toc-text">browserify运行原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#performancetiming"><span class="toc-number">1.16.</span> <span class="toc-text">performancetiming</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件UI与js组件规范化"><span class="toc-number">1.17.</span> <span class="toc-text">组件UI与js组件规范化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#immutableJavaScript"><span class="toc-number">1.18.</span> <span class="toc-text">immutableJavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generator与promise原理与使用"><span class="toc-number">1.19.</span> <span class="toc-text">generator与promise原理与使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建生态"><span class="toc-number">2.</span> <span class="toc-text">构建生态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#grunt-gulp开发环境任务编写"><span class="toc-number">2.1.</span> <span class="toc-text">grunt/gulp开发环境任务编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm、jspm、bower包管理工具"><span class="toc-number">2.2.</span> <span class="toc-text">npm、jspm、bower包管理工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#r-js、browserify、webpack、Rollup打包工具使用"><span class="toc-number">2.3.</span> <span class="toc-text">r.js、browserify、webpack、Rollup打包工具使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fis3构建与插件开发、构建环境、fis3构建离线包"><span class="toc-number">2.4.</span> <span class="toc-text">fis3构建与插件开发、构建环境、fis3构建离线包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webComponent："><span class="toc-number">2.5.</span> <span class="toc-text">webComponent：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#brunch构建工具"><span class="toc-number">2.6.</span> <span class="toc-text">brunch构建工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发技巧与调试"><span class="toc-number">3.</span> <span class="toc-text">开发技巧与调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fiddler加willow基础组合调试"><span class="toc-number">3.1.</span> <span class="toc-text">fiddler加willow基础组合调试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#werien、vorlonjs远程调试，chromeinspect"><span class="toc-number">3.2.</span> <span class="toc-text">werien、vorlonjs远程调试，chromeinspect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mockjs，F-M-S-FrontMockServer-模拟调试使用与cgi自动调试"><span class="toc-number">3.3.</span> <span class="toc-text">mockjs，F.M.S(FrontMockServer)模拟调试使用与cgi自动调试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#macha-phantomjs-casperjs-karma测试自动化任务使用"><span class="toc-number">3.4.</span> <span class="toc-text">macha/phantomjs/casperjs/karma测试自动化任务使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动化UI测试，海豚"><span class="toc-number">3.5.</span> <span class="toc-text">自动化UI测试，海豚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-supervior、node-inspector、karma"><span class="toc-number">3.6.</span> <span class="toc-text">node-supervior、node-inspector、karma</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发发布系统流程"><span class="toc-number">3.7.</span> <span class="toc-text">开发发布系统流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sublime高效插件"><span class="toc-number">3.8.</span> <span class="toc-text">sublime高效插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码自动化检查fecs"><span class="toc-number">3.9.</span> <span class="toc-text">代码自动化检查fecs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html、css与重构"><span class="toc-number">4.</span> <span class="toc-text">html、css与重构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jpeg、webp、apng、bpg图片"><span class="toc-number">4.1.</span> <span class="toc-text">jpeg、webp、apng、bpg图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iconfont使用与实现原理"><span class="toc-number">4.2.</span> <span class="toc-text">iconfont使用与实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面响应式设计"><span class="toc-number">4.3.</span> <span class="toc-text">页面响应式设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css重置"><span class="toc-number">4.4.</span> <span class="toc-text">css重置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sass-compass-less-postcss常用语法与使用"><span class="toc-number">4.5.</span> <span class="toc-text">sass/compass/less/postcss常用语法与使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mediaquery与常见页面尺寸了解"><span class="toc-number">4.6.</span> <span class="toc-text">mediaquery与常见页面尺寸了解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#em-rem原理与实现"><span class="toc-number">4.7.</span> <span class="toc-text">em,rem原理与实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code4ui、code4app、初页、maka等"><span class="toc-number">4.8.</span> <span class="toc-text">code4ui、code4app、初页、maka等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css3动画"><span class="toc-number">4.9.</span> <span class="toc-text">css3动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css网格布局"><span class="toc-number">4.10.</span> <span class="toc-text">css网格布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索引擎与前端SEO"><span class="toc-number">4.11.</span> <span class="toc-text">搜索引擎与前端SEO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器缓存种类，resources-webSQL-indexDB-localstorage-cookie-appcache-cachestorage"><span class="toc-number">4.12.</span> <span class="toc-text">浏览器缓存种类，resources,webSQL,indexDB,localstorage,cookie,appcache,cachestorage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UI框架"><span class="toc-number">4.13.</span> <span class="toc-text">UI框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#native-hybrid-桌面开发"><span class="toc-number">5.</span> <span class="toc-text">native/hybrid/桌面开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ionic移动开发方案"><span class="toc-number">5.1.</span> <span class="toc-text">ionic移动开发方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nativescript移动开发方案"><span class="toc-number">5.2.</span> <span class="toc-text">nativescript移动开发方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reactNative移动开发方案"><span class="toc-number">5.3.</span> <span class="toc-text">reactNative移动开发方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android-ios原生开发与框架"><span class="toc-number">5.4.</span> <span class="toc-text">android/ios原生开发与框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#桌面应用开发"><span class="toc-number">5.5.</span> <span class="toc-text">桌面应用开发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端-H5优化-另一个图已给出"><span class="toc-number">6.</span> <span class="toc-text">前端/H5优化(另一个图已给出)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yslow、pagespeed"><span class="toc-number">6.1.</span> <span class="toc-text">yslow、pagespeed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动web性能优化"><span class="toc-number">6.2.</span> <span class="toc-text">移动web性能优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全栈-全端开发"><span class="toc-number">7.</span> <span class="toc-text">全栈/全端开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#express-nodeclub-mongodb、thinkjs等框架"><span class="toc-number">7.1.</span> <span class="toc-text">express/nodeclub+mongodb、thinkjs等框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js直出"><span class="toc-number">7.2.</span> <span class="toc-text">node.js直出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实时web开发，meteor-express-io"><span class="toc-number">7.3.</span> <span class="toc-text">实时web开发，meteor/express.io</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MEAN-mongodb-express-angular-nodejs"><span class="toc-number">7.4.</span> <span class="toc-text">MEAN(mongodb/express/angular/nodejs)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http与http2协议、bigpipe、pipeline"><span class="toc-number">7.5.</span> <span class="toc-text">http与http2协议、bigpipe、pipeline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#离线缓存，cookie、localstorage、indexdb"><span class="toc-number">7.6.</span> <span class="toc-text">离线缓存，cookie、localstorage、indexdb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cdn与dns"><span class="toc-number">7.7.</span> <span class="toc-text">cdn与dns</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#研究实验"><span class="toc-number">8.</span> <span class="toc-text">研究实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WebAssembly、webTRC、typescript"><span class="toc-number">8.1.</span> <span class="toc-text">WebAssembly、webTRC、typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Materialdesign规范的前端框架"><span class="toc-number">8.2.</span> <span class="toc-text">Materialdesign规范的前端框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AMP-HTML规范"><span class="toc-number">8.3.</span> <span class="toc-text">AMP-HTML规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据分析与监控"><span class="toc-number">9.</span> <span class="toc-text">数据分析与监控</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#badjs数据上报"><span class="toc-number">9.1.</span> <span class="toc-text">badjs数据上报</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点击热力图clickHeat、heatMap"><span class="toc-number">9.2.</span> <span class="toc-text">点击热力图clickHeat、heatMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js加载失败优化方案"><span class="toc-number">9.3.</span> <span class="toc-text">js加载失败优化方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#百度alog数据上报"><span class="toc-number">9.4.</span> <span class="toc-text">百度alog数据上报</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它软技能"><span class="toc-number">10.</span> <span class="toc-text">其它软技能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#axure原型图设计"><span class="toc-number">10.1.</span> <span class="toc-text">axure原型图设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xmind脑图管理"><span class="toc-number">10.2.</span> <span class="toc-text">xmind脑图管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效率管理"><span class="toc-number">10.3.</span> <span class="toc-text">效率管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#caniuse、github"><span class="toc-number">10.4.</span> <span class="toc-text">caniuse、github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#知识管理-总结分享"><span class="toc-number">10.5.</span> <span class="toc-text">知识管理/总结分享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#产品思维与技能"><span class="toc-number">10.6.</span> <span class="toc-text">产品思维与技能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端技术网站"><span class="toc-number">11.</span> <span class="toc-text">前端技术网站</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#技术社区"><span class="toc-number">11.1.</span> <span class="toc-text">技术社区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行业会议"><span class="toc-number">11.2.</span> <span class="toc-text">行业会议</span></a></li></ol></li></ol>
-</div>
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-    }
-</script>
-
-
-
-
-
-<div class="bdsharebuttonbox">
-	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
-	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-</div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-
-
-
+</section>
+        
+          <aside id="sidebar">
+  
     
-      <div class="duoshuo" id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/16/Interview/FrontMap/" data-title="【转】2015-2016前端知识体系" data-url="https://chenchensdo.github.io/2016/01/16/Interview/FrontMap/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:"null"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = '/js/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-    <!-- 多说公共JS代码 end -->
-</div>
-
-    
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2016/01/19/Induce/JavaScript/JSTip/" title="上一篇: 原生JS TitleTip">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a href="/2016/01/15/Induce/JavaScript/NativeJS/" title="下一篇: 原生JavaScript探索">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Demo/">Demo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile/">Mobile</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NodeJs/">NodeJs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Skill/">Skill</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WebFront/">WebFront</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/content/">content</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/sublime/">sublime</a></li></ul>
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/17/see/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/post/">post'</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/19/Induce/CSS/overflowMore/">移动端设备显示限制，隐藏部分内容</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/Skill/WebFrontRule/">Web前端开发规范手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Tool/Git/">Git的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <script>
-        $(".post-list").addClass("toc-article");
-        $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-            }
-        })
-    </script>
+  </div>
 
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CDN/">CDN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Front-end-outline/">Front end outline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FrontPlan/">FrontPlan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interview/">Interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rem/">rem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/username/">username</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/window-7/">window 7</a></li></ul>
+    </div>
+  </div>
 
-    <script>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 15px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Sublime/" style="font-size: 12.5px;">Sublime</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/username/" style="font-size: 10px;">username</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
         
-    </script>
-</div>
+          <li>
+            <a href="/2016/10/17/see/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/13/post/">post&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/13/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/19/Induce/CSS/overflowMore/">移动端设备显示限制，隐藏部分内容</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
       <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2016 Red
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Red<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
+  </div>
 </footer>
-
     </div>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
+<script src="/js/script.js"></script>
 
   </div>
 </body>
