@@ -101,7 +101,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2016-10-26</span>
-            <span class="time">18:05:28</span>
+            <span class="time">18:07:27</span>
           </span>
           
           <!--  Categories  -->
@@ -124,7 +124,7 @@
         <!-- Post Main Content -->
         <div class="post-content">
           <hr>
-<p>　　50道面试题<br><a id="more"></a></p>
+<p>　　你掌握以下50道题目，我包你进BAT任何一家公司！<br><a id="more"></a></p>
 <h4 id="1、spring的缓存-mybatis缓存"><a href="#1、spring的缓存-mybatis缓存" class="headerlink" title="1、spring的缓存,mybatis缓存"></a>1、spring的缓存,mybatis缓存</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a、基于注解的方式 三种注解</div><div class="line">b、mybatis分为一级session和二级缓存mapper</div><div class="line">c、采用LRU算法（近期最少使用） http://www.iteye.com/topic/1112327/ 对缓存并发同步采用jdk的ReadWriteLock 读写锁</div><div class="line">源码：mapper调用、代理mapper调用、mapper的方法、sqlsession、缓存（二级没有到一级，一级没有到数据库搜）</div></pre></td></tr></table></figure>
 <h4 id="2、介绍下dubbo。A服务调用B服务，B服务又调用C服务-这种情况怎么办"><a href="#2、介绍下dubbo。A服务调用B服务，B服务又调用C服务-这种情况怎么办" class="headerlink" title="2、介绍下dubbo。A服务调用B服务，B服务又调用C服务,这种情况怎么办"></a>2、介绍下dubbo。A服务调用B服务，B服务又调用C服务,这种情况怎么办</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">client一个线程调用远程接口，生成一个唯一的ID（比如一段随机字符串，UUID等），Dubbo是使用AtomicLong从0开始累计数字的</div><div class="line">将打包的方法调用信息（如调用的接口名称，方法名称，参数值列表等），和处理结果的回调对象callback，全部封装在一起，组成一个对象object</div><div class="line">向专门存放调用信息的全局ConcurrentHashMap里面put(ID, object)</div><div class="line">将ID和打包的方法调用信息封装成一对象connRequest，使用IoSession.write(connRequest)异步发送出去</div><div class="line">当前线程再使用callback的get()方法试图获取远程返回的结果，在get()内部，则使用synchronized获取回调对 象callback的锁， 再先检测是否已经获取到结果，如果没有，然后调用callback的wait()方法，释放callback上的锁，让当前线程处于等待状态。</div><div class="line">服务端接收到请求并处理后，将结果（此结果中包含了前面的ID，即回传）发送给客户端，客户端socket连接上专门监听消息的线程收到 消息，分析结果，取到ID，再从前面的ConcurrentHashMap里面get(ID)，从而找到callback，将方法调用结果设置到 callback对象里。</div><div class="line">监听线程接着使用synchronized获取回调对象callback的锁（因为前面调用过wait()，那个线程已释放 callback的锁了），再notifyAll()，唤醒前面处于等待状态的线程继续执行（callback的get()方法继续执行就能拿到调用结果 了），至此，整个过程结束。</div><div class="line">循环依赖： check="false" 来不检查依赖</div></pre></td></tr></table></figure>
 <h4 id="3、JVM监控工具有哪些，区别又是什么（如能追上各个命令的使用监控，显得更好）-如何调优的（就那么几个内存参数和GC参数什么时候配置什么样的）-如何定位问题的？（就说各种命令，gc日志，快照，监控工具）"><a href="#3、JVM监控工具有哪些，区别又是什么（如能追上各个命令的使用监控，显得更好）-如何调优的（就那么几个内存参数和GC参数什么时候配置什么样的）-如何定位问题的？（就说各种命令，gc日志，快照，监控工具）" class="headerlink" title="3、JVM监控工具有哪些，区别又是什么（如能追上各个命令的使用监控，显得更好）,如何调优的（就那么几个内存参数和GC参数什么时候配置什么样的）?如何定位问题的？（就说各种命令，gc日志，快照，监控工具）"></a>3、JVM监控工具有哪些，区别又是什么（如能追上各个命令的使用监控，显得更好）,如何调优的（就那么几个内存参数和GC参数什么时候配置什么样的）?如何定位问题的？（就说各种命令，gc日志，快照，监控工具）</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1、jstack 可以定位到具体的线程堆栈，定位cpu冲高 结合top</div><div class="line">2、jmap查看堆内存使用情况</div><div class="line">3、jstat统计堆的使用情况</div><div class="line">4、vivalueVM MAT</div></pre></td></tr></table></figure>
