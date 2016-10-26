@@ -96,18 +96,10 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       
         <div class="archive-item">
-  <a href="/2015/12/21/Tool/Sublime/Sublimebest/" class="post-title">
-    Sublime Text历练
+  <a href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/" class="post-title">
+    OmniMarkupPreviewer
   </a>
-  <div class="date text-muted">Posted on 2015-12-21 18:29:20</div>
-</div>
-
-      
-        <div class="archive-item">
-  <a href="/2015/12/21/Plug/Sublime/SublimePackage/" class="post-title">
-    Sublime插件
-  </a>
-  <div class="date text-muted">Posted on 2015-12-21 18:29:10</div>
+  <div class="date text-muted">Posted on 2016-04-02 14:11:20</div>
 </div>
 
       
@@ -151,6 +143,16 @@
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
+locks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
     codeBlocks.forEach(function(block, index) {
       hljs.highlightBlock(block);
     });
