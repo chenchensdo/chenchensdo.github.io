@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="后端渲染环境搭建">
+  <meta name="author" content="Red">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="后端渲染"/>
+  <meta property="og:description" content="后端渲染环境搭建" />
+  <meta property="og:site_name" content="red&#39;s text blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://chenchensdo.github.ioundefined"/>
+  
+    <link rel="alternate" href="/atom.xml" title="red&#39;s text blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>red's text blog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">后端渲染</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/levblanc">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:levblanc@163.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Red</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2016-12-29</span>
+            <span class="time">10:27:00</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/render/">render</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/username/">#username</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <hr>
+<p>　　后端渲染环境搭建<br><a id="more"></a></p>
+<h2 id="教你如何搭建一个超完美的服务端渲染开发环境"><a href="#教你如何搭建一个超完美的服务端渲染开发环境" class="headerlink" title="教你如何搭建一个超完美的服务端渲染开发环境"></a><strong>教你如何搭建一个超完美的服务端渲染开发环境</strong></h2><blockquote>
+<p>Github地址: <a href="https://github.com/chikara-chan/react-isomorphic-boilerplate" target="_blank" rel="external">https://github.com/chikara-chan/react-isomorphic-boilerplate</a></p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a><strong>目录</strong></h3><ul>
+<li>前言</li>
+<li>服务端渲染好处</li>
+<li>思考</li>
+<li>原理</li>
+<li>同构方案</li>
+<li>状态管理方案</li>
+<li>路由方案</li>
+<li>静态资源处理方案</li>
+<li>动态加载方案</li>
+<li>优化方案</li>
+<li>部署方案</li>
+<li>其它</li>
+<li>结尾</li>
+</ul>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h3><p>前段时间公司有一个产品需求要求使用Node.js中间层来做服务端渲染，于是翻遍了整个技术社区，没有找到一个特别合适的脚手架，作为一个有追求的前端攻城狮，决定自己去搭建一套最完美的服务端渲染开发环境，期间踩过无数的坑，前前后后差不多折腾了三周时间。</p>
+<h3 id="服务端渲染好处"><a href="#服务端渲染好处" class="headerlink" title="服务端渲染好处"></a><strong>服务端渲染好处</strong></h3><ol>
+<li>SEO，让搜索引擎更容易读取页面内容</li>
+<li>首屏渲染速度更快（重点），无需等待js文件下载执行的过程</li>
+<li>更易于维护，服务端和客户端可以共享某些代码</li>
+</ol>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a><strong>思考</strong></h3><ol>
+<li>如何实现组件同构？</li>
+<li>如何保持前后端应用状态一致？</li>
+<li>如何解决前后端路由匹配问题？</li>
+<li>如何处理服务端对静态资源的依赖？</li>
+<li>如何配置两套不同的环境（开发环境和产品环境）？</li>
+<li>如何划分更合理的项目目录结构？</li>
+</ol>
+<p>由于服务端渲染配置的复杂性，大部分人望而止步，而本文的目的就在于教你如何搭建一套优雅的服务端渲染开发环境，从开发打包部署优化到上线。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a><strong>原理</strong></h3><p><img src="http://upload-images.jianshu.io/upload_images/4145295-df8e7f9aa01f3448.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加脚注"></p>
+<p>一个服务端渲染的同构web应用架构图大致如上图所示，得力于Node.js的发展与流行，Javascript成为了一门同构语言，这意味着我们只需写一套代码，可以同时在客户端与服务端执行。</p>
+<h3 id="同构方案"><a href="#同构方案" class="headerlink" title="同构方案"></a><strong>同构方案</strong></h3><p>这里我们采用React技术体系做同构，由于React本身的设计特点，它是以Virtual DOM的形式保存在内存中，这是服务端渲染的前提。</p>
+<p>对于客户端，通过调用ReactDOM.render方法把Virtual DOM转换成真实DOM最后渲染到界面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></div><div class="line">render(&lt;App /&gt;, document.getElementById('root'))</div></pre></td></tr></table></figure>
+<p>对于服务端，通过调用ReactDOMServer.renderToString方法把Virtual DOM转换成HTML字符串返回给客户端，从而达到服务端渲染的目的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; renderToString &#125; <span class="keyword">from</span> <span class="string">'react-dom/server'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">ctx</span>) </span>&#123;</div><div class="line">    <span class="keyword">await</span> ctx.render(<span class="string">'index'</span>, &#123;</div><div class="line">        <span class="attr">root</span>: renderToString(&lt;App /&gt;)</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="状态管理方案"><a href="#状态管理方案" class="headerlink" title="状态管理方案"></a><strong>状态管理方案</strong></h3><p>我们选择Redux来管理React组件的非私有组件状态，并配合社区中强大的中间件Devtools、Thunk、Promise等等来扩充应用。当进行服务端渲染时，创建store实例后，还必须把初始状态回传给客户端，客户端拿到初始状态后把它作为预加载状态来创建store实例，否则，客户端上生成的markup与服务端生成的markup不匹配，客户端将不得不再次加载数据，造成没必要的性能消耗。</p>
+<h4 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a><strong>服务端</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; renderToString &#125; <span class="keyword">from</span> <span class="string">'react-dom/server'</span></div><div class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></div><div class="line"><span class="keyword">import</span> rootReducer <span class="keyword">from</span> <span class="string">'./reducers'</span></div><div class="line"><span class="keyword">const</span> store = createStore(rootReducer)</div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">ctx</span>) </span>&#123;</div><div class="line">    <span class="keyword">await</span> ctx.render(<span class="string">'index'</span>, &#123;</div><div class="line">        <span class="attr">root</span>: renderToString(</div><div class="line">            &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">                &lt;App /&gt;</div><div class="line">            &lt;/Provider&gt;</div><div class="line">        ),</div><div class="line">        <span class="attr">state</span>: store.getState()</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a><strong>HTML</strong></h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;<span class="name">%-</span> <span class="attr">root</span> %&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="built_in">window</span>.REDUX_STATE = <span class="xml"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">JSON.stringify</span>(<span class="attr">state</span>) %&gt;</span></span></div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a><strong>客户端</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></div><div class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></div><div class="line"><span class="keyword">import</span> rootReducer <span class="keyword">from</span> <span class="string">'./reducers'</span></div><div class="line"><span class="keyword">const</span> store = createStore(rootReducer, <span class="built_in">window</span>.REDUX_STATE)</div><div class="line">render(</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">App</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span>, </div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="路由方案"><a href="#路由方案" class="headerlink" title="路由方案"></a><strong>路由方案</strong></h3><p>客户端路由的好处就不必多说了，客户端可以不依赖服务端，根据hash方式或者调用history API，不同的URL渲染不同的视图，实现无缝的页面切换，用户体验极佳。但服务端渲染不同的地方在于，在渲染之前，必须根据URL正确找到相匹配的组件返回给客户端。<br>React Router为服务端渲染提供了两个API：</p>
+<ul>
+<li>match 在渲染之前根据URL匹配路由组件</li>
+<li>RoutingContext 以同步的方式渲染路由组件</li>
+</ul>
+<h4 id="服务端-1"><a href="#服务端-1" class="headerlink" title="服务端"></a><strong>服务端</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; renderToString &#125; <span class="keyword">from</span> <span class="string">'react-dom/server'</span></div><div class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> &#123; match, RouterContext &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></div><div class="line"><span class="keyword">import</span> rootReducer <span class="keyword">from</span> <span class="string">'./reducers'</span></div><div class="line"><span class="keyword">import</span> routes <span class="keyword">from</span> <span class="string">'./routes'</span></div><div class="line"><span class="keyword">const</span> store = createStore(rootReducer)</div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">clientRoute</span>(<span class="params">ctx, next</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> _renderProps</div><div class="line">    match(&#123;routes, <span class="attr">location</span>: ctx.url&#125;, (error, redirectLocation, renderProps) =&gt; &#123;</div><div class="line">        _renderProps = renderProps</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">if</span> (_renderProps) &#123;</div><div class="line">        <span class="keyword">await</span> ctx.render(<span class="string">'index'</span>, &#123;</div><div class="line">            <span class="attr">root</span>: renderToString(</div><div class="line">                <span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></div><div class="line">                    <span class="tag">&lt;<span class="name">RouterContext</span> &#123;<span class="attr">..._renderProps</span>&#125; /&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></div><div class="line">            ),</div><div class="line">            state: store.getState()</div><div class="line">        &#125;)</div><div class="line">    &#125; else &#123;</div><div class="line">        await next()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="客户端-1"><a href="#客户端-1" class="headerlink" title="客户端"></a><strong>客户端</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Route, IndexRoute &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></div><div class="line"><span class="keyword">import</span> Common <span class="keyword">from</span> <span class="string">'./Common'</span></div><div class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'./Home'</span></div><div class="line"><span class="keyword">import</span> Explore <span class="keyword">from</span> <span class="string">'./Explore'</span></div><div class="line"><span class="keyword">import</span> About <span class="keyword">from</span> <span class="string">'./About'</span></div><div class="line"><span class="keyword">const</span> routes = (</div><div class="line">    &lt;Route path="/" component=&#123;Common&#125;&gt;</div><div class="line">        &lt;IndexRoute component=&#123;Home&#125; /&gt;</div><div class="line">        &lt;Route path="explore" component=&#123;Explore&#125; /&gt;</div><div class="line">        &lt;Route path="about" component=&#123;About&#125; /&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">)</div><div class="line">export default routes</div></pre></td></tr></table></figure>
+<h3 id="静态资源处理方案"><a href="#静态资源处理方案" class="headerlink" title="静态资源处理方案"></a><strong>静态资源处理方案</strong></h3><p>在客户端中，我们使用了大量的ES6/7语法，jsx语法，css资源，图片资源，最终通过webpack配合各种loader打包成一个文件最后运行在浏览器环境中。但是在服务端，不支持import、jsx这种语法，并且无法识别对css、image资源后缀的模块引用，那么要怎么处理这些静态资源呢？我们需要借助相关的工具、插件来使得Node.js解析器能够加载并执行这类代码，下面分别为开发环境和产品环境配置两套不同的解决方案。</p>
+<h4 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a><strong>开发环境</strong></h4><ol>
+<li>首先引入babel-polyfill这个库来提供regenerator运行时和core-js来模拟全功能ES6环境。</li>
+<li>引入babel-register，这是一个require钩子，会自动对require命令所加载的js文件进行实时转码，需要注意的是，这个库只适用于开发环境。</li>
+<li>引入css-modules-require-hook，同样是钩子，只针对样式文件，由于我们采用的是CSS Modules方案，并且使用SASS来书写代码，所以需要node-sass这个前置编译器来识别扩展名为.scss的文件，当然你也可以采用LESS的方式，通过这个钩子，自动提取className哈希字符注入到服务端的React组件中。</li>
+<li>引入asset-require-hook，来识别图片资源，对小于8K的图片转换成base64字符串，大于8k的图片转换成路径引用。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Provide custom regenerator runtime and core-js</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'babel-polyfill'</span>)</div><div class="line"><span class="comment">// Javascript required hook</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'babel-register'</span>)(&#123;<span class="attr">presets</span>: [<span class="string">'es2015'</span>, <span class="string">'react'</span>, <span class="string">'stage-0'</span>]&#125;)</div><div class="line"><span class="comment">// Css required hook</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'css-modules-require-hook'</span>)(&#123;</div><div class="line">    <span class="attr">extensions</span>: [<span class="string">'.scss'</span>],</div><div class="line">    <span class="attr">preprocessCss</span>: <span class="function">(<span class="params">data, filename</span>) =&gt;</span></div><div class="line">        <span class="built_in">require</span>(<span class="string">'node-sass'</span>).renderSync(&#123;</div><div class="line">            data,</div><div class="line">            <span class="attr">file</span>: filename</div><div class="line">        &#125;).css,</div><div class="line">    <span class="attr">camelCase</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">generateScopedName</span>: <span class="string">'[name]__[local]__[hash:base64:8]'</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">// Image required hook</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'asset-require-hook'</span>)(&#123;</div><div class="line">    <span class="attr">extensions</span>: [<span class="string">'jpg'</span>, <span class="string">'png'</span>, <span class="string">'gif'</span>, <span class="string">'webp'</span>],</div><div class="line">    <span class="attr">limit</span>: <span class="number">8000</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="产品环境"><a href="#产品环境" class="headerlink" title="产品环境"></a><strong>产品环境</strong></h4><p>对于产品环境，我们的做法是使用webpack分别对客户端和服务端代码进行打包。客户端代码打包这里不多说，对于服务端代码，需要指定运行环境为node，并且提供polyfill，设置<code>__filename</code>和<code>__dirname</code>为true，由于是采用CSS Modules，服务端只需获取className，而无需加载样式代码，所以要使用css-loader/locals替代css-loader加载样式文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">// webpack.config.js</div><div class="line">&#123;</div><div class="line">    target: 'node',</div><div class="line">    node: &#123;</div><div class="line">        __filename: true,</div><div class="line">        __dirname: true</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        loaders: [&#123;</div><div class="line">            test: /\.js$/,</div><div class="line">            exclude: /node_modules/,</div><div class="line">            loader: 'babel',</div><div class="line">            query: &#123;presets: ['es2015', 'react', 'stage-0']&#125;</div><div class="line">        &#125;, &#123;</div><div class="line">            test: /\.scss$/,</div><div class="line">            loaders: [</div><div class="line">                'css/locals?modules&amp;camelCase&amp;importLoaders=</div><div class="line">                			1&amp;localIdentName=[hash:base64:8]',</div><div class="line">                'sass'</div><div class="line">            ]</div><div class="line">        &#125;, &#123;</div><div class="line">            test: /\.(jpg|png|gif|webp)$/,</div><div class="line">            loader: 'url?limit=8000'</div><div class="line">        &#125;]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="动态加载方案"><a href="#动态加载方案" class="headerlink" title="动态加载方案"></a><strong>动态加载方案</strong></h3><p>对于大型Web应用程序来说，将所有代码打包成一个文件不是一种优雅的做法，特别是对于单页面应用，用户有时候并不想得到其余路由模块的内容，加载全部模块内容，不仅增加用户等待时间，而且会增加服务器负荷。Webpack提供一个功能可以拆分模块，每一个模块称为chunk，这个功能叫做Code Splitting。你可以在你的代码库中定义分割点，调用require.ensure，实现按需加载，而对于服务端渲染，require.ensure是不存在的，因此需要判断运行环境，提供钩子函数。</p>
+<p>重构后的路由模块为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Hook for server</span></div><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">require</span>.ensure !== <span class="string">'function'</span>) &#123;</div><div class="line">    <span class="built_in">require</span>.ensure = <span class="function"><span class="keyword">function</span>(<span class="params">dependencies, callback</span>) </span>&#123;</div><div class="line">        callback(<span class="built_in">require</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> routes = &#123;</div><div class="line">    <span class="attr">childRoutes</span>: [&#123;</div><div class="line">        <span class="attr">path</span>: <span class="string">'/'</span>,</div><div class="line">        <span class="attr">component</span>: <span class="built_in">require</span>(<span class="string">'./common/containers/Root'</span>).default,</div><div class="line">        <span class="attr">indexRoute</span>: &#123;</div><div class="line">            getComponent(nextState, callback) &#123;</div><div class="line">                <span class="built_in">require</span>.ensure([], <span class="built_in">require</span> =&gt; &#123;</div><div class="line">                    callback(<span class="literal">null</span>, <span class="built_in">require</span>(<span class="string">'./home/containers/App'</span>).default)</div><div class="line">                &#125;, <span class="string">'home'</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">childRoutes</span>: [&#123;</div><div class="line">            <span class="attr">path</span>: <span class="string">'explore'</span>,</div><div class="line">            getComponent(nextState, callback) &#123;</div><div class="line">                <span class="built_in">require</span>.ensure([], <span class="built_in">require</span> =&gt; &#123;</div><div class="line">                    callback(<span class="literal">null</span>, <span class="built_in">require</span>(<span class="string">'./explore/containers/App'</span>).default)</div><div class="line">                &#125;, <span class="string">'explore'</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;, &#123;</div><div class="line">            <span class="attr">path</span>: <span class="string">'about'</span>,</div><div class="line">            getComponent(nextState, callback) &#123;</div><div class="line">                <span class="built_in">require</span>.ensure([], <span class="built_in">require</span> =&gt; &#123;</div><div class="line">                    callback(<span class="literal">null</span>, <span class="built_in">require</span>(<span class="string">'./about/containers/App'</span>).default)</div><div class="line">                &#125;, <span class="string">'about'</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;]</div><div class="line">    &#125;]</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> routes</div></pre></td></tr></table></figure></p>
+<h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a><strong>优化方案</strong></h3><p>提取第三方库，命名为vendor<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vendor: [<span class="string">'react'</span>, <span class="string">'react-dom'</span>, <span class="string">'redux'</span>, <span class="string">'react-redux'</span>]</div></pre></td></tr></table></figure></p>
+<p>所有js模块以chunkhash方式命名<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'[name].[chunkhash:8].js'</span>,</div><div class="line">    <span class="attr">chunkFilename</span>: <span class="string">'chunk.[name].[chunkhash:8].js'</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>提取公共模块，manifest文件起过渡作用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">    <span class="attr">names</span>: [<span class="string">'vendor'</span>, <span class="string">'manifest'</span>],</div><div class="line">    <span class="attr">filename</span>: <span class="string">'[name].[chunkhash:8].js'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>提取css文件，以contenthash方式命名<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> ExtractTextPlugin(<span class="string">'[name].[contenthash:8].css'</span>)</div></pre></td></tr></table></figure></p>
+<p>模块排序、去重、压缩<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimize.OccurrenceOrderPlugin(), <span class="comment">// webpack2 已移除</span></div><div class="line"><span class="keyword">new</span> webpack.optimize.DedupePlugin(), <span class="comment">// webpack2 已移除</span></div><div class="line"><span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(&#123;</div><div class="line">    <span class="attr">compress</span>: &#123;<span class="attr">warnings</span>: <span class="literal">false</span>&#125;,</div><div class="line">    <span class="attr">comments</span>: <span class="literal">false</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>使用babel-plugin-transform-runtime取代babel-polyfill，可节省大量文件体积<br>需要注意的是，你不能使用最新的内置实例方法，例如数组的includes方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">presets</span>: [<span class="string">'es2015'</span>, <span class="string">'react'</span>, <span class="string">'stage-0'</span>],</div><div class="line">    <span class="attr">plugins</span>: [<span class="string">'transform-runtime'</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最终打包结果</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4145295-79f4c0bb6fd7480b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="alt"></p>
+<p><center>Paste_Image.png</center></p>
+<h3 id="部署方案"><a href="#部署方案" class="headerlink" title="部署方案"></a><strong>部署方案</strong></h3><p>对于客户端代码，将全部的静态资源上传至CDN服务器<br>对于服务端代码，则采用pm2部署，这是一个带有负载均衡功能的Node应用的进程管理器，支持监控、日志、0秒重载，并可以根据有效CPU数目以cluster的方式启动最大进程数目<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start ./server.js -i <span class="number">0</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4145295-741c7df64f14c997.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="alt"></p>
+<p><center>Paste_Image.png</center></p>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a><strong>其它</strong></h3><h4 id="提升开发体验"><a href="#提升开发体验" class="headerlink" title="提升开发体验"></a><strong>提升开发体验</strong></h4><p>对于客户端代码，可以使用Hot Module Replacement技术，并配合koa-webpack-dev-middleware，koa-webpack-hot-middleware两个中间件，与传统的BrowserSync不同的是，它可以使我们不用通过刷新浏览器的方式，让js和css改动实时更新反馈至浏览器界面中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.use(convert(devMiddleware(compiler, &#123;</div><div class="line">    <span class="attr">noInfo</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">publicPath</span>: config.output.publicPath</div><div class="line">&#125;)))</div><div class="line">app.use(convert(hotMiddleware(compiler)))</div></pre></td></tr></table></figure></p>
+<p>对于服务端代码，则使用nodemon监听代码改动，来自动重启node服务器，相比supervisor，更加灵活轻量，内存占用更少，可配置性更高。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nodemon ./server.js --watch server</div></pre></td></tr></table></figure></p>
+<p>对于React组件状态管理，使用Redux DevTools这个中间件，它可以跟踪每一个状态和action，监控数据流，由于采用纯函数的编程思想，还具备状态回溯的能力。需要注意的是，React组件在服务端生命周期只执行到componentWillMount，因此要把该中间件挂载到componentDidMount方法上，避免在服务端渲染而报错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Root</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">super</span>()</div><div class="line">        <span class="keyword">this</span>.state = &#123;<span class="attr">isMounted</span>: <span class="literal">false</span>&#125;</div><div class="line">    &#125;</div><div class="line">    componentDidMount() &#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;<span class="attr">isMounted</span>: <span class="literal">true</span>&#125;)</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">const</span> &#123;isMounted&#125; = <span class="keyword">this</span>.state</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">                &#123;isMounted &amp;&amp; <span class="tag">&lt;<span class="name">DevTools</span>/&gt;</span>&#125;</div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="代码风格约束"><a href="#代码风格约束" class="headerlink" title="代码风格约束"></a><strong>代码风格约束</strong></h4><p>推荐使用时下最为流行的ESLint，相比其它QA工具，拥有更多，更灵活，更容易扩展的配置，无论是对个人还是团队协作，引入代码风格检查工具，百益而无一害，建议你花个一天时间尝试一遍ESLint每一项配置，再决定需要哪些配置，舍弃哪些配置，而不是直接去使用Airbnb规范，Google规范等等。</p>
+<p>Tips: 使用fix参数可快速修复一些常见错误，在某种程度上，可以取代编辑器格式化工具<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eslint test.js --fix</div></pre></td></tr></table></figure></p>
+<h4 id="开发环境演示"><a href="#开发环境演示" class="headerlink" title="开发环境演示"></a><strong>开发环境演示</strong></h4><p>Youtubee视频，自备梯子<br><a href="https://www.youtube.com/watch?v=h3n3-v81PqY" target="_blank" rel="external">https://www.youtube.com/watch?v=h3n3-v81PqY</a></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
