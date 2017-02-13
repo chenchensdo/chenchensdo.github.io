@@ -1,129 +1,305 @@
-<!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Red">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="移动前端知识总结"/>
-  <meta property="og:description" content="" />
-  <meta property="og:site_name" content="red&#39;s text blog"/>
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://chenchensdo.github.ioundefined"/>
-  
-    <link rel="alternate" href="/atom.xml" title="red&#39;s text blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
+<!doctype html>
+
+
+
   
 
-  <!-- Site Title -->
-  <title>red's text blog</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <link rel="stylesheet" href="/css/style.light.css">
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-  <!-- Google Analytics -->
+
+
+
+  
+  
+  
   
 
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Mobile," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="移动时代本以为到移动端，就再也不用担心IE兼容问题，可是移动的设备，其实是更大的坑。面对这些问题，一开始我们只能在未知中试错，知道错误的方案，才能更容易寻找正确的解决问题思路。可看到移动web在业界不断趋向于成熟，各种框架和解决方案，不断的涌现让移动端开发不再是个噩梦。这几天把想到的一点经验先罗列出来，后续会持续更新，这篇文章可以给刚接触webapp开发的同学带来帮助，任何疑问欢迎留言探讨！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动前端知识总结">
+<meta property="og:url" content="https://chenchensdo.github.io/2016/01/28/Induce/Mobile/Mobile-knowledge/index.html">
+<meta property="og:site_name" content="red's text blog">
+<meta property="og:description" content="移动时代本以为到移动端，就再也不用担心IE兼容问题，可是移动的设备，其实是更大的坑。面对这些问题，一开始我们只能在未知中试错，知道错误的方案，才能更容易寻找正确的解决问题思路。可看到移动web在业界不断趋向于成熟，各种框架和解决方案，不断的涌现让移动端开发不再是个噩梦。这几天把想到的一点经验先罗列出来，后续会持续更新，这篇文章可以给刚接触webapp开发的同学带来帮助，任何疑问欢迎留言探讨！">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1064727-354d2f3142523da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1064727-8f498bb8f55c4844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-10-13T12:11:29.370Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动前端知识总结">
+<meta name="twitter:description" content="移动时代本以为到移动端，就再也不用担心IE兼容问题，可是移动的设备，其实是更大的坑。面对这些问题，一开始我们只能在未知中试错，知道错误的方案，才能更容易寻找正确的解决问题思路。可看到移动web在业界不断趋向于成熟，各种框架和解决方案，不断的涌现让移动端开发不再是个噩梦。这几天把想到的一点经验先罗列出来，后续会持续更新，这篇文章可以给刚接触webapp开发的同学带来帮助，任何疑问欢迎留言探讨！">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1064727-354d2f3142523da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://chenchensdo.github.io/2016/01/28/Induce/Mobile/Mobile-knowledge/"/>
+
+
+  <title> 移动前端知识总结 | red's text blog </title>
 </head>
 
-  <body>
-    <!-- Page Header -->
+<body itemscope itemtype="//schema.org/WebPage" lang="">
+
+  
 
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">移动前端知识总结</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/levblanc">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:levblanc@163.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">red's text blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
   </div>
-</header>
+  <p class="site-subtitle"></p>
+</div>
 
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By Red</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2016-01-28</span>
-            <span class="time">10:27:00</span>
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                移动前端知识总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-01-28T14:11:20+08:00" content="2016-01-28">
+              2016-01-28
+            </time>
           </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
 
-<a href="/categories/Mobile/">Mobile</a>
-</span>
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Mobile/" itemprop="url" rel="index">
+                    <span itemprop="name">Mobile</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
           
         </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/Mobile/">#Mobile</a>
+      </header>
+    
 
 
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <p>　　移动时代本以为到移动端，就再也不用担心IE兼容问题，可是移动的设备，其实是更大的坑。面对这些问题，一开始我们只能在未知中试错，知道错误的方案，才能更容易寻找正确的解决问题思路。可看到移动web在业界不断趋向于成熟，各种框架和解决方案，不断的涌现让移动端开发不再是个噩梦。<br>这几天把想到的一点经验先罗列出来，后续会持续更新，这篇文章可以给刚接触webapp开发的同学带来帮助，任何疑问欢迎留言探讨！<br><a id="more"></a></p>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　移动时代本以为到移动端，就再也不用担心IE兼容问题，可是移动的设备，其实是更大的坑。面对这些问题，一开始我们只能在未知中试错，知道错误的方案，才能更容易寻找正确的解决问题思路。可看到移动web在业界不断趋向于成熟，各种框架和解决方案，不断的涌现让移动端开发不再是个噩梦。<br>这几天把想到的一点经验先罗列出来，后续会持续更新，这篇文章可以给刚接触webapp开发的同学带来帮助，任何疑问欢迎留言探讨！<br><a id="more"></a></p>
 <table>
 <thead>
 <tr>
@@ -249,42 +425,289 @@
 <p>移动布局：</p>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/Mobile" target="_blank" rel="external">MDN:手机网页开发</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag" target="_blank" rel="external">MDN:在移动浏览器中使用viewport元标签控制布局</a><br><a href="https://www.zhihu.com/question/20269059" target="_blank" rel="external">移动前端开发和 Web 前端开发的区别是什么</a><br><a href="http://alloyteam.github.io/Spirit/modules/Standard/" target="_blank" rel="external">Alloyteam移动开发规范概述</a><br><a href="http://sentsin.com/web/54.html" target="_blank" rel="external">手机/移动前端开发需要注意的20个要点</a><br><a href="http://www.w3cplus.com/responsive" target="_blank" rel="external">w3cplus响应式技术资源</a><br><a href="http://www.infoq.com/cn/articles/development-of-the-mobile-web-deep-concept" target="_blank" rel="external">浅谈移动Web开发</a><br><a href="https://github.com/AlloyTeam/Mars" target="_blank" rel="external">Alloyteam Mars</a><br><a href="http://junmer.github.io/mobile-dev-get-started/" target="_blank" rel="external">移动WEB开发入门</a><br><a href="https://github.com/jtyjty99999/mobileTech" target="_blank" rel="external">移动开发资源集合</a><br><a href="http://quirksmode.org/mobilewebhandbook/" target="_blank" rel="external">The Mobile Web Handbook</a><br><a href="http://www.w3ctech.com/topic/979" target="_blank" rel="external">MobileWeb 适配总结</a><br><a href="http://www.css88.com/archives/5480" target="_blank" rel="external">移动前端不得不了解的html5 head 头标签</a></p>
 
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mobile/" rel="tag">#Mobile</a>
+          
         </div>
-      </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/27/Induce/Ajax/Ajax/" rel="next" title="Ajax学习计划">
+                <i class="fa fa-chevron-left"></i> Ajax学习计划
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/20/Induce/CSS/animation/" rel="prev" title="CSS3动画探秘">
+                CSS3动画探秘 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
   </div>
-</article>
 
 
+          </div>
+          
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Red" />
+          <p class="site-author-name" itemprop="name">Red</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">1.</span> <span class="nav-text">常见问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta基础知识"><span class="nav-number">2.</span> <span class="nav-text">meta基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#H5页面窗口自动调整到设备宽度，并禁止用户缩放页面"><span class="nav-number">2.1.</span> <span class="nav-text">H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#忽略将页面中的数字识别为电话号码"><span class="nav-number">2.2.</span> <span class="nav-text">忽略将页面中的数字识别为电话号码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#忽略Android平台中对邮箱地址的识别"><span class="nav-number">2.3.</span> <span class="nav-text">忽略Android平台中对邮箱地址的识别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari"><span class="nav-number">2.4.</span> <span class="nav-text">当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式"><span class="nav-number">2.5.</span> <span class="nav-text">将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#viewport模板"><span class="nav-number">3.</span> <span class="nav-text">viewport模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#viewport模板——通用"><span class="nav-number">3.1.</span> <span class="nav-text">viewport模板——通用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewport模板-target-densitydpi-device-dpi，android-2-3-5以下版本不支持"><span class="nav-number">3.2.</span> <span class="nav-text">viewport模板 - target-densitydpi=device-dpi，android 2.3.5以下版本不支持</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rem配置参考："><span class="nav-number">4.</span> <span class="nav-text">rem配置参考：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉"><span class="nav-number">4.1.</span> <span class="nav-text">winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webkit表单元素的默认外观怎么重置"><span class="nav-number">4.2.</span> <span class="nav-text">webkit表单元素的默认外观怎么重置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webkit表单输入框placeholder的颜色值能改变么"><span class="nav-number">4.3.</span> <span class="nav-text">webkit表单输入框placeholder的颜色值能改变么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webkit表单输入框placeholder的文字能换行么"><span class="nav-number">4.4.</span> <span class="nav-text">webkit表单输入框placeholder的文字能换行么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用-radio-和-checkbox-默认样式"><span class="nav-number">4.5.</span> <span class="nav-text">禁用 radio 和 checkbox 默认样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用PC端表单输入框默认清除按钮"><span class="nav-number">4.6.</span> <span class="nav-text">禁用PC端表单输入框默认清除按钮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁止ios-长按时不触发系统的菜单，禁止ios-amp-android长按时下载图片"><span class="nav-number">4.7.</span> <span class="nav-text">禁止ios 长按时不触发系统的菜单，禁止ios&android长按时下载图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁止ios和android用户选中文字"><span class="nav-number">4.8.</span> <span class="nav-text">禁止ios和android用户选中文字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打电话发短信写邮件怎么实现"><span class="nav-number">4.9.</span> <span class="nav-text">打电话发短信写邮件怎么实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟按钮hover效果"><span class="nav-number">4.10.</span> <span class="nav-text">模拟按钮hover效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用总结："><span class="nav-number">4.11.</span> <span class="nav-text">使用总结：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ios使用-webkit-text-size-adjust禁止调整字体大小"><span class="nav-number">4.12.</span> <span class="nav-text">ios使用-webkit-text-size-adjust禁止调整字体大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#消除transition闪屏"><span class="nav-number">4.13.</span> <span class="nav-text">消除transition闪屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何阻止windows-Phone的默认触摸事件"><span class="nav-number">4.14.</span> <span class="nav-text">如何阻止windows Phone的默认触摸事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的移动端框架"><span class="nav-number">4.15.</span> <span class="nav-text">常用的移动端框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex布局"><span class="nav-number">4.16.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例：两端对齐"><span class="nav-number">4.17.</span> <span class="nav-text">示例：两端对齐</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Red</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-  </body>
-</html>
 
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

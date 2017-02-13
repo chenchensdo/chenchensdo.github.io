@@ -1,170 +1,590 @@
-<!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Red">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="Ajax Status请求状态"/>
-  <meta property="og:description" content="" />
-  <meta property="og:site_name" content="red&#39;s text blog"/>
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://chenchensdo.github.ioundefined"/>
-  
-    <link rel="alternate" href="/atom.xml" title="red&#39;s text blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
+<!doctype html>
+
+
+
   
 
-  <!-- Site Title -->
-  <title>red's text blog</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <link rel="stylesheet" href="/css/style.light.css">
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-  <!-- Google Analytics -->
+
+
+
+  
+  
+  
   
 
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Ajax," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="这篇文章主要介绍了各类Http请求状态(status)及其含义。　　需要的朋友可以过来参考下，希望对大家有所帮助。Web服务器响应浏览器或其他客户程序的请求时，其应答一般由以下几个部分组成：一个状态行，几个应答头，一个空行，内容文档。下面是一个最简单的应答   ：状态行包含HTTP版本、状态代码、与状态代码对应的简短说明信息。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax Status请求状态">
+<meta property="og:url" content="https://chenchensdo.github.io/2016/01/19/Induce/Ajax/AjaxStatus/index.html">
+<meta property="og:site_name" content="red's text blog">
+<meta property="og:description" content="这篇文章主要介绍了各类Http请求状态(status)及其含义。　　需要的朋友可以过来参考下，希望对大家有所帮助。Web服务器响应浏览器或其他客户程序的请求时，其应答一般由以下几个部分组成：一个状态行，几个应答头，一个空行，内容文档。下面是一个最简单的应答   ：状态行包含HTTP版本、状态代码、与状态代码对应的简短说明信息。">
+<meta property="og:updated_time" content="2016-10-13T12:11:29.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ajax Status请求状态">
+<meta name="twitter:description" content="这篇文章主要介绍了各类Http请求状态(status)及其含义。　　需要的朋友可以过来参考下，希望对大家有所帮助。Web服务器响应浏览器或其他客户程序的请求时，其应答一般由以下几个部分组成：一个状态行，几个应答头，一个空行，内容文档。下面是一个最简单的应答   ：状态行包含HTTP版本、状态代码、与状态代码对应的简短说明信息。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://chenchensdo.github.io/2016/01/19/Induce/Ajax/AjaxStatus/"/>
+
+
+  <title> Ajax Status请求状态 | red's text blog </title>
 </head>
 
-  <body>
-    <!-- Page Header -->
+<body itemscope itemtype="//schema.org/WebPage" lang="">
+
+  
 
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">Ajax Status请求状态</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/levblanc">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:levblanc@163.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">red's text blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
   </div>
-</header>
+  <p class="site-subtitle"></p>
+</div>
 
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By Red</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2016-01-19</span>
-            <span class="time">10:27:00</span>
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ajax Status请求状态
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-01-19T13:58:41+08:00" content="2016-01-19">
+              2016-01-19
+            </time>
           </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
 
-<a href="/categories/Ajax/">Ajax</a>
-</span>
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">Ajax</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
           
         </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/Ajax/">#Ajax</a>
+      </header>
+    
 
 
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <p>　　这篇文章主要介绍了各类Http请求状态(status)及其含义。<br>　　需要的朋友可以过来参考下，希望对大家有所帮助。Web服务器响应浏览器或其他客户程序的请求时，其应答一般由以下几个部分组成：一个状态行，几个应答头，一个空行，内容文档。下面是一个最简单的应答   ：<br>状态行包含HTTP版本、状态代码、与状态代码对应的简短说明信息。<br><a id="more"></a><br>　　在大多数情况下，除了Content-Type之外的所有应答头都是可选的。但Content-Type是必需的，它描述的是后面文档的MIME类型。虽然大多数应答都包含一个文档，但也有一些不包含，例如对HEAD请求的应答永远不会附带文档。有许多状态代码实际上用来标识一次失败的请求，这些应答也不包含文档（或只包含一个简短的错误信息说明）。<br>当用户试图通过 HTTP 访问一台正在运行 Internet 信息服务 (IIS) 的服务器上的内容时，IIS 返回一个表示该请求的状态的数字代码。状态代码可以指明具体请求是否已成功，还可以揭示请求失败的确切原因。</p>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　这篇文章主要介绍了各类Http请求状态(status)及其含义。<br>　　需要的朋友可以过来参考下，希望对大家有所帮助。Web服务器响应浏览器或其他客户程序的请求时，其应答一般由以下几个部分组成：一个状态行，几个应答头，一个空行，内容文档。下面是一个最简单的应答   ：<br>状态行包含HTTP版本、状态代码、与状态代码对应的简短说明信息。<br><a id="more"></a><br>　　在大多数情况下，除了Content-Type之外的所有应答头都是可选的。但Content-Type是必需的，它描述的是后面文档的MIME类型。虽然大多数应答都包含一个文档，但也有一些不包含，例如对HEAD请求的应答永远不会附带文档。有许多状态代码实际上用来标识一次失败的请求，这些应答也不包含文档（或只包含一个简短的错误信息说明）。<br>当用户试图通过 HTTP 访问一台正在运行 Internet 信息服务 (IIS) 的服务器上的内容时，IIS 返回一个表示该请求的状态的数字代码。状态代码可以指明具体请求是否已成功，还可以揭示请求失败的确切原因。</p>
 <h2 id="1xx-信息提示"><a href="#1xx-信息提示" class="headerlink" title="1xx - 信息提示"></a>1xx - 信息提示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">这些状态代码表示临时的响应。客户端在收到常规响应之前，应准备接收一个或多个 1xx 响应。 </div><div class="line">100 - Continue 初始的请求已经接受，客户应当继续发送请求的其余部分。（HTTP 1.1新） </div><div class="line">101 - Switching Protocols 服务器将遵从客户的请求转换到另外一种协议（HTTP 1.1新）</div></pre></td></tr></table></figure>
 <h2 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx - 成功"></a>2xx - 成功</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">这类状态代码表明服务器成功地接受了客户端请求。</div><div class="line">200 - OK 一切正常，对GET和POST请求的应答文档跟在后面。 </div><div class="line">201 - Created 服务器已经创建了文档，Location头给出了它的URL。 </div><div class="line">202 - Accepted 已经接受请求，但处理尚未完成。 </div><div class="line">203 - Non-Authoritative Information 文档已经正常地返回，但一些应答头可能不正确，因为使用的是文档的拷贝，非权威性信息（HTTP 1.1新）。</div><div class="line">204 - No Content 没有新文档，浏览器应该继续显示原来的文档。如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。 </div><div class="line">205 - Reset Content 没有新的内容，但浏览器应该重置它所显示的内容。用来强制浏览器清除表单输入内容（HTTP 1.1新）。 </div><div class="line">206 - Partial Content 客户发送了一个带有Range头的GET请求，服务器完成了它（HTTP 1.1新）。</div></pre></td></tr></table></figure>
 <h2 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx - 重定向"></a>3xx - 重定向</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">客户端浏览器必须采取更多操作来实现请求。例如，浏览器可能不得不请求服务器上的不同的页面，或通过代理服务器重复该请求。</div><div class="line">300 - Multiple Choices 客户请求的文档可以在多个位置找到，这些位置已经在返回的文档内列出。如果服务器要提出优先选择，则应该在Location应答头指明。 </div><div class="line">301 - Moved Permanently 客户请求的文档在其他地方，新的URL在Location头中给出，浏览器应该自动地访问新的URL。 </div><div class="line">302 - Found 类似于301，但新的URL应该被视为临时性的替代，而不是永久性的。注意，在HTTP1.0中对应的状态信息是“Moved Temporatily”。出现该状态代码时，浏览器能够自动访问新的URL，因此它是一个很有用的状态代码。注意这个状态代码有时候可以和301替换使用。例如，如果浏览器错误地请求http://host/~user （缺少了后面的斜杠），有的服务器返回301，有的则返回302。严格地说，我们只能假定只有当原来的请求是GET时浏览器才会自动重定向。请参见307。 </div><div class="line">303 - See Other 类似于301/302，不同之处在于，如果原来的请求是POST，Location头指定的重定向目标文档应该通过GET提取（HTTP 1.1新）。     </div><div class="line">304 - Not Modified 客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。</div><div class="line">305 - Use Proxy 客户请求的文档应该通过Location头所指明的代理服务器提取（HTTP 1.1新）。 </div><div class="line">307 - Temporary Redirect 和302（Found）相同。许多浏览器会错误地响应302应答进行重定向，即使原来的请求是POST，即使它实际上只能在POST请求的应答是303时才能重定向。由于这个原因，HTTP 1.1新增了307，以便更加清除地区分几个状态代码：当出现303应答时，浏览器可以跟随重定向的GET和POST请求；如果是307应答，则浏览器只能跟随对GET请求的重定向。（HTTP 1.1新）</div></pre></td></tr></table></figure>
 <h2 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx - 客户端错误"></a>4xx - 客户端错误</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">发生错误，客户端似乎有问题。例如，客户端请求不存在的页面，客户端未提供有效的身份验证信息。</div><div class="line"></div><div class="line">400 - Bad Request 请求出现语法错误。     </div><div class="line">401 - Unauthorized 访问被拒绝，客户试图未经授权访问受密码保护的页面。应答中会包含一个WWW-Authenticate头，浏览器据此显示用户名字/密码对话框，然后在填写合适的Authorization头后再次发出请求。IIS 定义了许多不同的 401 错误，它们指明更为具体的错误原因。这些具体的错误代码在浏览器中显示，但不在 IIS 日志中显示：</div><div class="line"></div><div class="line">401.1 - 登录失败。</div><div class="line">401.2 - 服务器配置导致登录失败。</div><div class="line">401.3 - 由于 ACL 对资源的限制而未获得授权。</div><div class="line">401.4 - 筛选器授权失败。</div><div class="line">401.5 - ISAPI/CGI 应用程序授权失败。</div><div class="line">401.7 – 访问被 Web 服务器上的 URL 授权策略拒绝。这个错误代码为 IIS 6.0 所专用。</div><div class="line">403 - Forbidden 资源不可用。服务器理解客户的请求，但拒绝处理它。通常由于服务器上文件或目录的权限设置导致。</div><div class="line">禁止访问：IIS 定义了许多不同的 403 错误，它们指明更为具体的错误原因：</div><div class="line"></div><div class="line">403.1 - 执行访问被禁止。</div><div class="line">403.2 - 读访问被禁止。</div><div class="line">403.3 - 写访问被禁止。</div><div class="line">403.4 - 要求 SSL。</div><div class="line">403.5 - 要求 SSL 128。</div><div class="line">403.6 - IP 地址被拒绝。</div><div class="line">403.7 - 要求客户端证书。</div><div class="line">403.8 - 站点访问被拒绝。</div><div class="line">403.9 - 用户数过多。</div><div class="line">403.10 - 配置无效。</div><div class="line">403.11 - 密码更改。</div><div class="line">403.12 - 拒绝访问映射表。</div><div class="line">403.13 - 客户端证书被吊销。</div><div class="line">403.14 - 拒绝目录列表。</div><div class="line">403.15 - 超出客户端访问许可。</div><div class="line">403.16 - 客户端证书不受信任或无效。</div><div class="line">403.17 - 客户端证书已过期或尚未生效。</div><div class="line">403.18 - 在当前的应用程序池中不能执行所请求的 URL。这个错误代码为 IIS 6.0 所专用。</div><div class="line">403.19 - 不能为这个应用程序池中的客户端执行 CGI。这个错误代码为 IIS 6.0 所专用。</div><div class="line">403.20 - Passport 登录失败。这个错误代码为 IIS 6.0 所专用。</div><div class="line"></div><div class="line">404 - Not Found 无法找到指定位置的资源。这也是一个常用的应答。</div><div class="line"></div><div class="line">404.0 -（无） – 没有找到文件或目录。</div><div class="line">404.1 - 无法在所请求的端口上访问 Web 站点。</div><div class="line">404.2 - Web 服务扩展锁定策略阻止本请求。</div><div class="line">404.3 - MIME 映射策略阻止本请求。</div><div class="line">405 - Method Not Allowed 请求方法（GET、POST、HEAD、DELETE、PUT、TRACE等）对指定的资源不适用，用来访问本页面的 HTTP 谓词不被允许（方法不被允许）（HTTP 1.1新） </div><div class="line">406 - Not Acceptable 指定的资源已经找到，但它的MIME类型和客户在Accpet头中所指定的不兼容，客户端浏览器不接受所请求页面的 MIME 类型（HTTP 1.1新）。 </div><div class="line">407 - Proxy Authentication Required 要求进行代理身份验证，类似于401，表示客户必须先经过代理服务器的授权。（HTTP 1.1新） </div><div class="line">408 - Request Timeout 在服务器许可的等待时间内，客户一直没有发出任何请求。客户可以在以后重</div><div class="line"></div><div class="line">复同一请求。（HTTP 1.1新）</div><div class="line">409 - Conflict 通常和PUT请求有关。由于请求和资源的当前状态相冲突，因此请求不能成功。（HTTP 1.1新） </div><div class="line">410 - Gone 所请求的文档已经不再可用，而且服务器不知道应该重定向到哪一个地址。它和404的不同在于，返回407表示文档永久地离开了指定的位置，而404表示由于未知的原因文档不可用。（HTTP 1.1新） </div><div class="line">411 - Length Required 服务器不能处理请求，除非客户发送一个Content-Length头。（HTTP 1.1新） </div><div class="line">412 - Precondition Failed 请求头中指定的一些前提条件失败（HTTP 1.1新）。</div><div class="line">413 – Request Entity Too Large 目标文档的大小超过服务器当前愿意处理的大小。如果服务器认为</div><div class="line"></div><div class="line">自己能够稍后再处理该请求，则应该提供一个Retry-After头（HTTP 1.1新）。 </div><div class="line">414 - Request URI Too Long URI太长（HTTP 1.1新）。 </div><div class="line">415 – 不支持的媒体类型。</div><div class="line">416 – Requested Range Not Satisfiable 服务器不能满足客户在请求中指定的Range头。（HTTP 1.1新） </div><div class="line">417 – 执行失败。</div><div class="line">423 – 锁定的错误。</div></pre></td></tr></table></figure>
 <h2 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx - 服务器错误"></a>5xx - 服务器错误</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">服务器由于遇到错误而不能完成该请求。</div><div class="line"></div><div class="line">500 - Internal Server Error 服务器遇到了意料不到的情况，不能完成客户的请求。 </div><div class="line"></div><div class="line">500.12 - 应用程序正忙于在 Web 服务器上重新启动。</div><div class="line">500.13 - Web 服务器太忙。</div><div class="line">500.15 - 不允许直接请求 Global.asa。</div><div class="line">500.16 – UNC 授权凭据不正确。这个错误代码为 IIS 6.0 所专用。</div><div class="line">500.18 – URL 授权存储不能打开。这个错误代码为 IIS 6.0 所专用。</div><div class="line">500.100 - 内部 ASP 错误。</div><div class="line"></div><div class="line">501 - Not Implemented 服务器不支持实现请求所需要的功能，页眉值指定了未实现的配置。例如，客户发出了一个服务器不支持的PUT请求。</div><div class="line"></div><div class="line">502 - Bad Gateway 服务器作为网关或者代理时，为了完成请求访问下一个服务器，但该服务器返回了非法的应答。 亦说Web 服务器用作网关或代理服务器时收到了无效响应。</div><div class="line"></div><div class="line">502.1 - CGI 应用程序超时。</div><div class="line">502.2 - CGI 应用程序出错。</div><div class="line"></div><div class="line">503 - Service Unavailable 服务不可用，服务器由于维护或者负载过重未能应答。例如，Servlet可能</div><div class="line"></div><div class="line">在数据库连接池已满的情况下返回503。服务器返回503时可以提供一个Retry-After头。这个错误代码为IIS 6.0 所专用。</div><div class="line"></div><div class="line">504 - Gateway Timeout 网关超时，由作为代理或网关的服务器使用，表示不能及时地从远程服务器获得应答。（HTTP 1.1新） 。</div><div class="line"></div><div class="line">505 - HTTP Version Not Supported 服务器不支持请求中所指明的HTTP版本。（HTTP 1.1新）。</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ajax/" rel="tag">#Ajax</a>
+          
         </div>
-      </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/19/Induce/JavaScript/JSTip/" rel="next" title="原生JS TitleTip">
+                <i class="fa fa-chevron-left"></i> 原生JS TitleTip
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/19/Tool/Git/" rel="prev" title="Git的使用技巧">
+                Git的使用技巧 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
   </div>
-</article>
 
 
+          </div>
+          
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Red" />
+          <p class="site-author-name" itemprop="name">Red</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1xx-信息提示"><span class="nav-number">1.</span> <span class="nav-text">1xx - 信息提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2xx-成功"><span class="nav-number">2.</span> <span class="nav-text">2xx - 成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3xx-重定向"><span class="nav-number">3.</span> <span class="nav-text">3xx - 重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4xx-客户端错误"><span class="nav-number">4.</span> <span class="nav-text">4xx - 客户端错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5xx-服务器错误"><span class="nav-number">5.</span> <span class="nav-text">5xx - 服务器错误</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Red</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-  </body>
-</html>
 
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

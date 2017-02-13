@@ -1,129 +1,302 @@
-<!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Red">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="OmniMarkupPreviewer"/>
-  <meta property="og:description" content="" />
-  <meta property="og:site_name" content="red&#39;s text blog"/>
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://chenchensdo.github.ioundefined"/>
-  
-    <link rel="alternate" href="/atom.xml" title="red&#39;s text blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
+<!doctype html>
+
+
+
   
 
-  <!-- Site Title -->
-  <title>red's text blog</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <link rel="stylesheet" href="/css/style.light.css">
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-  <!-- Google Analytics -->
+
+
+
+  
+  
+  
   
 
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="sublime," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="OmniMarkupPreviewer：作为 Sublime Text 的一款强大插件，支持将标记语言渲染为 HTML 并在浏览器上实时预览，同时支持导出 HTML 源码文件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OmniMarkupPreviewer">
+<meta property="og:url" content="https://chenchensdo.github.io/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/index.html">
+<meta property="og:site_name" content="red's text blog">
+<meta property="og:description" content="OmniMarkupPreviewer：作为 Sublime Text 的一款强大插件，支持将标记语言渲染为 HTML 并在浏览器上实时预览，同时支持导出 HTML 源码文件。">
+<meta property="og:updated_time" content="2016-10-13T12:11:29.375Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OmniMarkupPreviewer">
+<meta name="twitter:description" content="OmniMarkupPreviewer：作为 Sublime Text 的一款强大插件，支持将标记语言渲染为 HTML 并在浏览器上实时预览，同时支持导出 HTML 源码文件。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://chenchensdo.github.io/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/"/>
+
+
+  <title> OmniMarkupPreviewer | red's text blog </title>
 </head>
 
-  <body>
-    <!-- Page Header -->
+<body itemscope itemtype="//schema.org/WebPage" lang="">
+
+  
 
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">OmniMarkupPreviewer</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/levblanc">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:levblanc@163.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">red's text blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
   </div>
-</header>
+  <p class="site-subtitle"></p>
+</div>
 
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By Red</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2016-04-02</span>
-            <span class="time">10:27:00</span>
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                OmniMarkupPreviewer
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-02T14:11:20+08:00" content="2016-04-02">
+              2016-04-02
+            </time>
           </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
 
-<a href="/categories/sublime/">sublime</a>
-</span>
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/sublime/" itemprop="url" rel="index">
+                    <span itemprop="name">sublime</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
           
         </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/sublime/">#sublime</a>
+      </header>
+    
 
 
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <p>　　<strong>OmniMarkupPreviewer：</strong>作为 Sublime Text 的一款强大插件，支持将标记语言渲染为 HTML 并在浏览器上实时预览，同时支持导出 HTML 源码文件。</p>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　<strong>OmniMarkupPreviewer：</strong>作为 Sublime Text 的一款强大插件，支持将标记语言渲染为 HTML 并在浏览器上实时预览，同时支持导出 HTML 源码文件。</p>
 <a id="more"></a>
 <h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><blockquote>
 <p>Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。 —— 来自维基百科</p>
@@ -137,42 +310,289 @@
 <h3 id="详细设置"><a href="#详细设置" class="headerlink" title="详细设置"></a>详细设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">$&#123;packages&#125; 路径为 /Users/ashfinal/Library/Application Support/Sublime Text 3/Packages/</div><div class="line"></div><div class="line">&#123;</div><div class="line">	&quot;server_host&quot;: &quot;192.168.1.100&quot;,</div><div class="line">	&lt;!-- 开启预览服务的 IP 地址, 默认为 localhost. --&gt;</div><div class="line"></div><div class="line">	&quot;browser_command&quot;: [&quot;open&quot;, &quot;-a&quot;, &quot;Google Chrome&quot;, &quot;&#123;url&#125;&quot;],</div><div class="line">	&lt;!-- 你完全可以在 Mac 上编辑 Markdown 文档，而把 iPad 当作外接显示器来实时预览 --&gt;</div><div class="line">	// User public static files should be placed into</div><div class="line">	// $&#123;packages&#125;/User/OmniMarkupPreviewer/public/</div><div class="line">	// User templates should be placed into:</div><div class="line">	// $&#123;packages&#125;/User/OmniMarkupPreviewer/templates/</div><div class="line">	// Requires browser reload</div><div class="line"></div><div class="line">	&quot;html_template_name&quot;: &quot;Evolution Yellow&quot;,</div><div class="line">	// list of renderers to be ignored, case sensitive.</div><div class="line">	// Valid renderers are: &quot;CreoleRenderer&quot;, &quot;MarkdownRenderer&quot;, &quot;PodRenderer&quot;,</div><div class="line">	// &quot;RDocRenderer&quot;, &quot;RstRenderer&quot;, &quot;TextitleRenderer&quot;</div><div class="line">	// for example, to disable Textile and Pod renderer:</div><div class="line">	// &quot;ignored_renderers&quot;: [&quot;TextitleRenderer&quot;, &quot;PodRenderer&quot;]</div><div class="line"></div><div class="line">	&quot;ignored_renderers&quot;: [&quot;CreoleRenderer&quot;, &quot;PodRenderer&quot;, &quot;RDocRenderer&quot;, &quot;TextitleRenderer&quot;, &quot;LiterateHaskellRenderer&quot;],</div><div class="line"></div><div class="line">	&quot;mathjax_enabled&quot;: false,</div><div class="line">	// MarkdownRenderer options</div><div class="line"></div><div class="line">	&quot;renderer_options-MarkdownRenderer&quot;: &#123;</div><div class="line">	// Valid extensions:</div><div class="line">	// - OFFICIAL (Python Markdown) -</div><div class="line">	// &quot;extra&quot;: Combines [&quot;abbr&quot;, &quot;attr_list&quot;, &quot;def_list&quot;, &quot;fenced_code&quot;, &quot;footnotes&quot;, &quot;tables&quot;, &quot;smart_strong&quot;]</div><div class="line">	// For PHP Markdown Extra(http://michelf.ca/projects/php-markdown/extra/)</div><div class="line">	// &quot;abbr&quot;: http://packages.python.org/Markdown/extensions/abbreviations.html</div><div class="line">	// &quot;attr_list&quot;: http://packages.python.org/Markdown/extensions/attr_list.html</div><div class="line">	// &quot;def_list&quot;: http://packages.python.org/Markdown/extensions/definition_lists.html</div><div class="line">	// &quot;fenced_code&quot;: http://packages.python.org/Markdown/extensions/fenced_code_blocks.html</div><div class="line">	// &quot;footnotes&quot;: http://packages.python.org/Markdown/extensions/footnotes.html</div><div class="line">	// &quot;tables&quot;: http://packages.python.org/Markdown/extensions/tables.html</div><div class="line">	// &quot;smart_strong&quot;: http://packages.python.org/Markdown/extensions/smart_strong.html</div><div class="line">	// &quot;codehilite&quot;: http://packages.python.org/Markdown/extensions/code_hilite.html</div><div class="line">	// &quot;meta&quot;: http://packages.python.org/Markdown/extensions/meta_data.html</div><div class="line">	// &quot;toc&quot;: http://packages.python.org/Markdown/extensions/toc.html</div><div class="line">	// &quot;nl2br&quot;: http://packages.python.org/Markdown/extensions/nl2br.html</div><div class="line">	// - 3RD PARTY -</div><div class="line">	// &quot;strikeout&quot;: Strikeout extension syntax - `This ~~is deleted text.~~`</div><div class="line">	// &quot;subscript&quot;: Subscript extension syntax - `This is water: H~2~O`</div><div class="line">	// &quot;superscript&quot;: Superscript extension syntax 0 `2^10^ = 1024`</div><div class="line">	// &quot;smarty&quot; or &quot;smartypants&quot;: Python-Markdown extension using smartypants to emit</div><div class="line">	// typographically nicer (&quot;curly&quot;) quotes, proper</div><div class="line">	// (&quot;em&quot; and &quot;en&quot;) dashes, etc.</div><div class="line">	// See: http://daringfireball.net/projects/smartypants/</div><div class="line">	// And: https://github.com/waylan/Python-Markdown/blob/master/docs/extensions/smarty.txt</div><div class="line"></div><div class="line">	&quot;extensions&quot;: [&quot;extra&quot;, &quot;codehilite&quot;, &quot;toc&quot;, &quot;strikeout&quot;, &quot;smarty&quot;, &quot;subscript&quot;, &quot;superscript&quot;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="配色美化"><a href="#配色美化" class="headerlink" title="配色美化"></a>配色美化</h3><p><a href="https://github.com/luuman/sublime-config/blob/master/OmniMarkupPreviewer/public/github.css" title="github.css" target="_blank" rel="external">github.css</a></p>
 
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/sublime/" rel="tag">#sublime</a>
+          
         </div>
-      </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/02/Induce/JavaScript/JSInputSearch/" rel="next" title="Input输入框的案例">
+                <i class="fa fa-chevron-left"></i> Input输入框的案例
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/02/Induce/Skill/WebFrontRule/" rel="prev" title="Web前端开发规范手册">
+                Web前端开发规范手册 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
   </div>
-</article>
 
 
+          </div>
+          
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Red" />
+          <p class="site-author-name" itemprop="name">Red</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown"><span class="nav-number">1.</span> <span class="nav-text">Markdown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sublime-Text-3"><span class="nav-number">2.</span> <span class="nav-text">Sublime Text 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OmniMarkupPreviewer"><span class="nav-number">3.</span> <span class="nav-text">OmniMarkupPreviewer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#详细设置"><span class="nav-number">3.1.</span> <span class="nav-text">详细设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配色美化"><span class="nav-number">3.2.</span> <span class="nav-text">配色美化</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Red</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-  </body>
-</html>
 
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
